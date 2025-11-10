@@ -2,7 +2,7 @@ package com.ynwe.aicodezero.service;
 
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
-import com.ynwe.aicodezero.model.dto.UserQueryRequest;
+import com.ynwe.aicodezero.model.dto.user.UserQueryRequest;
 import com.ynwe.aicodezero.model.entity.User;
 import com.ynwe.aicodezero.model.vo.LoginUserVO;
 import com.ynwe.aicodezero.model.vo.UserVO;

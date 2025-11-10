@@ -10,7 +10,7 @@ import com.ynwe.aicodezero.constant.UserConstant;
 import com.ynwe.aicodezero.exeception.BusinessException;
 import com.ynwe.aicodezero.exeception.ErrorCode;
 import com.ynwe.aicodezero.exeception.ThrowUtils;
-import com.ynwe.aicodezero.model.dto.*;
+import com.ynwe.aicodezero.model.dto.user.*;
 import com.ynwe.aicodezero.model.entity.User;
 import com.ynwe.aicodezero.model.vo.LoginUserVO;
 import com.ynwe.aicodezero.model.vo.UserVO;

@@ -2,6 +2,7 @@ package com.ynwe.aicodezero.service;
 
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
+import com.ynwe.aicodezero.model.dto.app.AppAddRequest;
 import com.ynwe.aicodezero.model.dto.app.AppQueryRequest;
 import com.ynwe.aicodezero.model.entity.App;
 import com.ynwe.aicodezero.model.entity.User;
@@ -37,6 +38,14 @@ public interface AppService extends IService<App> {
     Flux<String> chatToGenCode(Long appId, String message, User loginUser);
 
     /**
+     * 异步生成应用截图
+     *
+     * @param appId
+     * @param appUrl
+     */
+    void generateAppScreenshotAsync(Long appId, String appUrl);
+
+    /**
      * 获取应用封装类
      *
      * @param app
@@ -61,4 +70,12 @@ public interface AppService extends IService<App> {
     public QueryWrapper getQueryWrapper(AppQueryRequest appQueryRequest);
 
 
+    /**
+     * 创建应用
+     *
+     * @param appAddRequest
+     * @param loginUser
+     * @return
+     */
+    Long createApp(AppAddRequest appAddRequest, User loginUser);
 }

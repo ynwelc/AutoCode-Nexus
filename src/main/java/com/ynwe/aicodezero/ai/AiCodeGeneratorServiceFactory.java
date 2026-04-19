@@ -2,6 +2,7 @@ package com.ynwe.aicodezero.ai;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
+import com.ynwe.aicodezero.ai.guardrail.PromptSafetyInputGuardrail;
 import com.ynwe.aicodezero.ai.tools.*;
 import com.ynwe.aicodezero.exeception.BusinessException;
 import com.ynwe.aicodezero.exeception.ErrorCode;
@@ -104,6 +105,7 @@ public class AiCodeGeneratorServiceFactory {
                         .hallucinatedToolNameStrategy(toolExecutionRequest -> ToolExecutionResultMessage.from(
                                 toolExecutionRequest, "Error: there is no tool called " + toolExecutionRequest.name()
                         ))
+                        .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
                         .build();
             }
             case HTML, MULTI_FILE -> {
@@ -113,6 +115,7 @@ public class AiCodeGeneratorServiceFactory {
                         .chatModel(chatModel)
                         .streamingChatModel(openAiStreamingChatModel)
                         .chatMemory(chatMemory)
+                        .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
                         .build();
             }
             default -> throw new BusinessException(ErrorCode.SYSTEM_ERROR,

@@ -18,7 +18,8 @@ spring:
       host: localhost
       port: 6379
       password:
-      ttl: 3600
+      ttl: 3600 # 缓存的过期时间
+      database: 0 # 不同的业务可以用不同的库，进行隔离缓存
   profiles:
     active: local
 server:

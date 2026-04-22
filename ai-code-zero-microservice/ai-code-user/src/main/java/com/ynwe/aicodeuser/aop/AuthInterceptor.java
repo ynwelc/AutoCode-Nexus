@@ -1,10 +1,10 @@
 package com.ynwe.aicodeuser.aop;
 
-import com.ynwe.aicodeuser.annotation.AuthCheck;
-import com.ynwe.aicodeuser.exeception.BusinessException;
-import com.ynwe.aicodeuser.exeception.ErrorCode;
-import com.ynwe.aicodeuser.model.entity.User;
-import com.ynwe.aicodeuser.model.enums.UserRoleEnum;
+import com.ynwe.aicodezero.annotation.AuthCheck;
+import com.ynwe.aicodezero.exeception.BusinessException;
+import com.ynwe.aicodezero.exeception.ErrorCode;
+import com.ynwe.aicodezero.model.entity.User;
+import com.ynwe.aicodezero.model.enums.UserRoleEnum;
 import com.ynwe.aicodeuser.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;

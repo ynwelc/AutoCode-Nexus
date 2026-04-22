@@ -2,10 +2,10 @@ package com.ynwe.aicodeuser.service;
 
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
-import com.ynwe.aicodeuser.model.dto.user.UserQueryRequest;
-import com.ynwe.aicodeuser.model.entity.User;
-import com.ynwe.aicodeuser.model.vo.LoginUserVO;
-import com.ynwe.aicodeuser.model.vo.UserVO;
+import com.ynwe.aicodezero.model.dto.user.UserQueryRequest;
+import com.ynwe.aicodezero.model.entity.User;
+import com.ynwe.aicodezero.model.vo.LoginUserVO;
+import com.ynwe.aicodezero.model.vo.UserVO;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.List;

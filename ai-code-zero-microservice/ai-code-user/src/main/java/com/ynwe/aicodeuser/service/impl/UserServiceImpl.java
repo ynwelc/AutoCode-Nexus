@@ -5,14 +5,14 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
-import com.ynwe.aicodeuser.exeception.BusinessException;
-import com.ynwe.aicodeuser.exeception.ErrorCode;
+import com.ynwe.aicodezero.exeception.BusinessException;
+import com.ynwe.aicodezero.exeception.ErrorCode;
 import com.ynwe.aicodeuser.mapper.UserMapper;
-import com.ynwe.aicodeuser.model.dto.user.UserQueryRequest;
-import com.ynwe.aicodeuser.model.entity.User;
-import com.ynwe.aicodeuser.model.enums.UserRoleEnum;
-import com.ynwe.aicodeuser.model.vo.LoginUserVO;
-import com.ynwe.aicodeuser.model.vo.UserVO;
+import com.ynwe.aicodezero.model.dto.user.UserQueryRequest;
+import com.ynwe.aicodezero.model.entity.User;
+import com.ynwe.aicodezero.model.enums.UserRoleEnum;
+import com.ynwe.aicodezero.model.vo.LoginUserVO;
+import com.ynwe.aicodezero.model.vo.UserVO;
 import com.ynwe.aicodeuser.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.ynwe.aicodeuser.constant.UserConstant.USER_LOGIN_STATE;
+import static com.ynwe.aicodezero.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * 用户 服务层实现。

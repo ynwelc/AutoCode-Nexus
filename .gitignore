@@ -1,5 +1,6 @@
 ### CUSTOM ###
 src/main/resources/application-local.yml
+ai-code-zero-microservice/ai-code-app/src/main/resources/application-local.yml
 tmp
 
 HELP.md

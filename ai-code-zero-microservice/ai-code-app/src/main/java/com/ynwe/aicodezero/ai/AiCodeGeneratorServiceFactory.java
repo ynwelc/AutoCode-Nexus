@@ -27,7 +27,7 @@ import java.time.Duration;
 public class AiCodeGeneratorServiceFactory {
 
     //    (name = "openAiChatModel")
-    @Resource
+    @Resource(name = "openAiChatModel")
     private ChatModel chatModel;
 
     @Resource

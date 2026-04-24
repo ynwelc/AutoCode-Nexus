@@ -15,7 +15,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8123',
+        target: 'http://localhost:8123', //单体项目请求后端端口
+        // target: 'http://localhost:8080', // 微服务网关请求端口
         changeOrigin: true,
         secure: false,
       },

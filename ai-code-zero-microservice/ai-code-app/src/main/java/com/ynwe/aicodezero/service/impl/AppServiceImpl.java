@@ -49,7 +49,7 @@ import java.lang.Thread;
 /**
  * 应用 服务层实现。
  *
- * @author <a href="https://github.com/ynwelc">hhhhh</a>
+ * @author
  */
 @Service
 @Slf4j

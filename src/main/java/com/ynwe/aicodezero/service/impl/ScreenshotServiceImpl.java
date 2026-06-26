@@ -30,16 +30,26 @@ public class ScreenshotServiceImpl implements ScreenshotService {
         // 1. 生成本地截图
         String localScreenshotPath = WebScreenshotUtils.saveWebPageScreenshot(webUrl);
         ThrowUtils.throwIf(StrUtil.isBlank(localScreenshotPath), ErrorCode.OPERATION_ERROR, "本地截图生成失败");
-        try {
-            // 2. 上传到对象存储
-            String cosUrl = uploadScreenshotToCos(localScreenshotPath);
-            ThrowUtils.throwIf(StrUtil.isBlank(cosUrl), ErrorCode.OPERATION_ERROR, "截图上传对象存储失败");
-            log.info("网页截图生成并上传成功: {} -> {}", webUrl, cosUrl);
-            return cosUrl;
-        } finally {
-            // 3. 清理本地文件
-            cleanupLocalFile(localScreenshotPath);
-        }
+        log.info("网页截图生成成功并保存至本地: {}", localScreenshotPath);
+        //        try {
+        //            // 2. 上传到对象存储
+        //            String cosUrl = uploadScreenshotToCos(localScreenshotPath);
+        //            ThrowUtils.throwIf(StrUtil.isBlank(cosUrl), ErrorCode.OPERATION_ERROR, "截图上传对象存储失败");
+        //            log.info("网页截图生成并上传成功: {} -> {}", webUrl, cosUrl);
+        //            return cosUrl;
+        //        } finally {
+        //            // 3. 清理本地文件
+        //            cleanupLocalFile(localScreenshotPath);
+        //        }
+        // ================== 替换为返回本地映射网络路径 ==================
+        String separator = java.io.File.separator;
+        String keyword = "tmp" + separator + "screenshots" + separator;
+        // 截取相对路径
+        String relativePath = localScreenshotPath.substring(localScreenshotPath.indexOf(keyword) + keyword.length());
+
+        // 返回可通过网络访问的相对 URL 路径（将反斜杠统一替换为正斜杠，兼容 Windows 和 Linux）
+        // 由于 server.servlet.context-path 配置为 /api，需要添加 /api 前缀
+        return "/api/screenshots/" + relativePath.replace("\\", "/");
     }
 
     /**
